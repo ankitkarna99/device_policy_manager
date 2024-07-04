@@ -46,7 +46,7 @@ public class DevicePolicyManagerPlugin
         if (call.method.equals("setMaxFailedPassword")) {
             int maxFailedPw = call.argument("maxFailedPassword");
             deviceManger.setMaximumFailedPasswordsForWipe(compName, maxFailedPw);
-        } if (call.method.equals("enablePermission")) {
+        } else if (call.method.equals("enablePermission")) {
             String message = call.argument("message").toString();
             Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
             intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, compName);
